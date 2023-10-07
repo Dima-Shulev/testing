@@ -5,27 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Test extends Model
+class Question extends Model
 {
     use HasFactory;
 
-    protected $table = 'tests';
+    protected $table = 'questions';
     protected $fillable = [
-        'title',
+        'question',
         'created_at',
-        'user_id'
+        'test_id'
     ];
 
     protected $hidden = ['active'];
 
     public $timestamps = false;
 
-    public function user(){
-        return $this->belongsTo('App/Model/User');
+    public function test(){
+        return $this->belongsTo('App/Model/Test');
     }
-
-    public function question(){
-        return $this->hasMany('App/Model/Question');
+    public function answer(){
+        return $this->hasMany('App/Model/Answer');
     }
-
 }

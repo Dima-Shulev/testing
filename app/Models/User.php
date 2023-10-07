@@ -33,8 +33,5 @@ class User extends Model
 
     public function test(){
         return $this->hasMany('App/Models/Test');
-}
-
-
-
+    }
 }
