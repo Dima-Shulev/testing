@@ -12,8 +12,8 @@ class Test extends Model
     protected $table = 'tests';
     protected $fillable = [
         'title',
-        'user_id',
-        'created_at'
+        'created_at',
+        'user_id'
     ];
 
     protected $hidden = ['active'];

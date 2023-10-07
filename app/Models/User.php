@@ -15,13 +15,15 @@ class User extends Model
         'name',
         'email',
         'password',
-        'avatar'];
+        'avatar'
+    ];
 
     protected $hidden = [
         'password',
         'status',
         'active',
-        'remember_token',];
+        'remember_token'
+    ];
 
     public $casts = [
         'email_verified_at' => 'datetime',
