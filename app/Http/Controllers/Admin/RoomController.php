@@ -12,7 +12,7 @@ class RoomController extends Controller
     }
 
     public function check(Request $request){
-
+        dd($request);
     }
 
 }

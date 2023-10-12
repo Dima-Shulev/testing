@@ -7,12 +7,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function(){
 
-    Route::prefix('room')->group(function(){
-        Route::controller(RoomController::class)->group(function(){
-            Route::get('/','index')->name('admin.room');
-            Route::post('/check','check')->name('admin.room.check');
-        });
-    });
+    Route::get('/',[RoomController::class,'index'])->name('admin.room');
+    Route::post('/check',[RoomController::class,'check'])->name('admin.room.check');
 
     Route::controller(UserController::class)->middleware('adminPanel')->group(function(){
         Route::get('/user','index')->name('admin.user');
